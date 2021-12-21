@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+@import url('https://fonts.googleapis.com/css?family=Irish+Grover');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700');
+
+body {
+  /*https://media.giphy.com/media/d3MKb2hCZaNH63zq/giphy.gif*/
+  background-image: url("../img/halinapage.jpeg");
+  
+  /* Image is centered vertically and horizontally at all times */
+  background-position: top center;
+  
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+  
+  /* Makes the image fixed in the viewport so that it doesn't move when 
+     the content height is greater than the image height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+  body {
+    /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+    background-image: url("../img/halinaicon.jpeg");
+  }
+}
+
+p {
+  text-align:justify;
+  font-size: 12px;
+}
+
+nav {
+  text-align: right;
+  font-weight: bold;
+  vertical-align: text-bottom;
+  font-size: 20px;
+  font-family: 'Lora', cursive;
+  padding: 5px;
+}
+
+nav a {
+  color: rgb(212, 189, 86);
+  text-decoration: none;
+  vertical-align: text-bottom;
+}
+
+h1 {
+  text-align: center;
+  background-color: #222;
+  color: #ccc;
+  padding: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+	color: rgb(212, 189, 86);
+	text-align: center;
+  margin: 0;
+  padding: 0;
+	font-size: 35px;
+	font-family: 'Lora', cursive;
+	letter-spacing: 1px;
+}
+
+h3 {
+	color: black;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Caveat Brush', cursive;
+	letter-spacing: 1px;
+}
+
+p {
+	color: black;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Caveat Brush', cursive;
+	letter-spacing: 1px;
+}
+
+div {
+	text-align: center;
+}
+
+main {
+  display: inline-block;
+}
+
+main img {
+  display: inline block;
+  margin: auto;
+}
+
+main a {
+  color: rgb(212, 189, 86);
+  font-size: 25px;
+  text-decoration: none;
+  vertical-align: text-bottom;
+}
+
+img {
+  border: 5px solid green;
+  border-radius: 4px;
+}
+
+aside {
+  display: inline-block;
+  width: 21%;
+  vertical-align: top;
+  background-color: #cfc;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 15px #222;
+}
+
+aside ul {
+  padding-left: 17px;
+}
+
+footer {
+	text-transform: uppercase;
+	padding: 25px;
+	background-color: #0d2c40;
+	color: white;
+	font-family: "Droid Serif", serif;
+	font-size: 16px;
+	letter-spacing: .08em;
+	font-weight: 500;	
+}
+
+/** CLASSES **/
+
+.footernotgame {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.container {
+  max-width: 960px; /* common value, responsive design */
+  margin: 0 auto;
+
+  padding: 1em; /*space inside the box*/
+   /*space outside the box*/
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.divimg {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.roundswon {
+	color: black;
+	font-size: 25px;
+  font-family: 'Irish Grover', cursive;
+  background-color: #a5e09bde; /*#a5e09b78;*/
+}
+
+.gamestatus {
+	color: black;
+	font-size: 25px;
+  font-family: 'Irish Grover', cursive;
+  background-color: #a5e09bde;
+}
+
+.gameovercaption {
+	color: black;
+	font-size: 30px;
+	font-family: 'Luckiest Guy', cursive;
+}
+
+.pClass {
+	color: black;
+	text-align: center;
+	font-size: 23px;
+  font-family: 'Irish Grover', cursive;
+	letter-spacing: 1px;
+  background-color: #a5e09bde; /*#a5e09b78;*/
+}
+
+.imgrow {
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
+.imgbutton {
+	border: 0;
+	padding-left: 10px;
+    padding-right: 10px;
+}
+
+span.guessword {
+  display: inline; /* the default for span */
+  width: 200px;
+  height: 200px;
+  border: 2px solid green;
+  font-size: 100px;
+  border-radius: 0.2em;
+}
+
+span.answeredword {
+  display: inline; /* the default for span */
+  width: 200px;
+  height: 200px;
+  border: 2px solid green;
+  font-size: 100px;
+  color: black;
+  border-radius: 0.2em;
+}
+
+.divflex {
+  text-align: center;
+  display: flex;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #50b36147;
+}
+
+.imginstruct {
+  border: 0;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.copyright {
+	float: left;
+}
+
+.message {
+	float: right;
+}
+
+.afooter {
+	font-size: 16px;
+	text-align: center;
+
+}
+
+.name {
+	color: #f15b31;
+	font-weight: 700;
+}
+
+.contactdetails {
+	font-family: "Droid Serif", serif;
+	/*font-size: 18px;*/
+	text-transform: none;
+	padding: 0px;
+	text-decoration: none;
+	color: orange;
+}
+
+/******************* GAME OVER **********************/
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(100,255,100,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: black; /*#ccc;*/
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/******************* GAME OVER **********************/
+
+/*** BLINK ****/
+.blink {
+	-webkit-animation: blink 1s linear infinite;
+	-moz-animation: blink 1s linear infinite;
+	-ms-animation: blink 1s linear infinite;
+	-o-animation: blink 1s linear infinite;
+	 animation: blink 1s linear infinite;
+}
+
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+/*** BLINK ****/
