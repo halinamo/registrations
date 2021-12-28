@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Irish+Grover');
 @import url('https://fonts.googleapis.com/css?family=Lora');
 @import url('https://fonts.googleapis.com/css?family=Avenir');
-@import url('https://fonts.googleapis.com/css?family=Felix+Titling');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
 @import url('https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700');
 
 body {
@@ -66,7 +66,7 @@ h2 {
   margin: 0;
   padding: 0;
 	font-size: 45px;
-	font-family: 'Felix Titling', cursive;
+	font-family: 'Cormorant Garamond', cursive;
 	letter-spacing: 1px;
 }
 
