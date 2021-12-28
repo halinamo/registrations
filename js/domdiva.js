@@ -7,6 +7,12 @@ const divasURL = "https://divacontest.herokuapp.com/divasjson";
 const startPage = function () {
 
 	const x = window.location.href;
+	if (x.includes("batchdivaselect")) {
+		if (!x.includes("uid")) {
+			window.open("batchdiva.html", "_self");
+		}
+	}
+
 	if (x.includes("uid")) {
 		// diva select page
 		listDivas();

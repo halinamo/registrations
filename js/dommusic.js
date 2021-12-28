@@ -7,6 +7,12 @@ const divasURL = "https://musicgroupcontest.herokuapp.com/musicgroupsjson";
 const startPage = function () {
 
 	const x = window.location.href;
+	if (x.includes("batchmusicselect")) {
+		if (!x.includes("uid")) {
+			window.open("batchmusic.html", "_self");
+		}
+	}
+
 	if (x.includes("uid")) {
 		// diva select page
 		listDivas();
@@ -272,7 +278,7 @@ function signIn() {
 					console.log(user.batchyr);
 					if (user.email == word2Email.value && user.batchyr == word2Year.value) {
 						console.log("match found");
-						window.open("batchmusicselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
+						window.open("batchmusicselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self");
 					}
 				});
 

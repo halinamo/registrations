@@ -7,6 +7,12 @@ const divasURL = "https://moviecontest.herokuapp.com/moviesjson";
 const startPage = function () {
 
 	const x = window.location.href;
+	if (x.includes("batchmovieselect")) {
+		if (!x.includes("uid")) {
+			window.open("batchmovie.html", "_self");
+		}
+	}
+
 	if (x.includes("uid")) {
 		// diva select page
 		listDivas();
