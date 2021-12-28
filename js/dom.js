@@ -143,6 +143,7 @@ function listDivas() {
 				cont.appendChild(divaImg);
 				cont.appendChild(brr);
 				cont.appendChild(selecttag);
+				cont.appendChild(document.createTextNode('\u00A0'));
 				cont.appendChild(lblName);
 				cont.appendChild(document.createTextNode('\u00A0\u00A0'));
 				cont.appendChild(lblTaken);
