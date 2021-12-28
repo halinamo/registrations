@@ -164,52 +164,75 @@ function signUp() {
 	var wordYear = document.getElementById("wordYear");
 	var wordSection = document.getElementById("wordSection");
 
-	axios.get(usersURL, {
-		headers: {
-			ADMIN: 'halina'
-		}
-	})
-		.then(response => {
-			const users = response.data;
-			console.log(`GET list users`);
+	var valid = true;
+	// console.log("signUp with " + wordName.value);
+	// console.log("signUp with " + wordEmail.value);
+	// console.log("signUp with " + wordYear.value);
+	// console.log("signUp with " + wordSection.value);
+	if (wordName.value == null || wordName.value == "") {
+		valid = false;
+		msg1.innerHTML = "Name cannot be empty.";
+	} else if (wordEmail.value == null || wordEmail.value == "" || !wordEmail.value.includes("@")) {
+		valid = false;
+		msg1.innerHTML = "Email cannot be empty and should be a valid email address.";
+	} else if (wordYear.value == null || wordYear.value == "") {
+		valid = false;
+		msg1.innerHTML = "Batch Year cannot be empty.";
+	} else if (wordSection.value == null || wordSection.value == "") {
+		valid = false;
+		msg1.innerHTML = "Section cannot be empty.";
+	} 
 
-			let found = false
-			users.forEach(function (user, index) {
-				console.log(user.email);
-				console.log(user.batchyr);
-				if (user.email == wordEmail.value) {
-					console.log("year match found");
-					found = true;
-					msg1.setAttribute("class", "name");
-					msg1.innerHTML = "Email exists. Please sign in instead.";
-				}
-			});
-
-			console.log("found=" + found);
-
-			if (!found) {
-				console.log("new user");
-				axios.post(usersURL, {
-					"name": wordName.value,
-					"email": wordEmail.value,
-					"batchyr": wordYear.value,
-					"section": wordSection.value,
-					"active": "TRUE"
-				}, {
-					headers: {
-						ADMIN: 'halina'
-					}
-				})
-					.then(response => {
-						const user = response.data;
-						console.log(user);
-						window.open("batchdivaselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
-					})
-					.catch(error => console.error(error));
+	if (!valid) {
+		msg1.setAttribute("class", "name");
+	} else {
+		axios.get(usersURL, {
+			headers: {
+				ADMIN: 'halina'
 			}
-
 		})
-		.catch(error => console.error(error));
+			.then(response => {
+				const users = response.data;
+				console.log(`GET list users`);
+
+				let found = false
+				users.forEach(function (user, index) {
+					console.log(user.email);
+					console.log(user.batchyr);
+					if (user.email == wordEmail.value) {
+						console.log("year match found");
+						found = true;
+						msg1.setAttribute("class", "name");
+						msg1.innerHTML = "Email exists. Please sign in instead.";
+					}
+				});
+
+				console.log("found=" + found);
+
+				if (!found) {
+					console.log("new user");
+					axios.post(usersURL, {
+						"name": wordName.value,
+						"email": wordEmail.value,
+						"batchyr": wordYear.value,
+						"section": wordSection.value,
+						"active": "TRUE"
+					}, {
+						headers: {
+							ADMIN: 'halina'
+						}
+					})
+						.then(response => {
+							const user = response.data;
+							console.log(user);
+							window.open("batchdivaselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
+						})
+						.catch(error => console.error(error));
+				}
+
+			})
+			.catch(error => console.error(error));
+	}
 }
 
 function signIn() {
@@ -220,31 +243,44 @@ function signIn() {
 
 	var word2Email = document.getElementById("word2Email");
 	var word2Year = document.getElementById("word2Year");
-	console.log("signIn with " + word2Email.value);
-	console.log("signIn with " + word2Year.value);
+	// console.log("signIn with " + word2Email.value);
+	// console.log("signIn with " + word2Year.value);
 
-	axios.get(usersURL, {
-		headers: {
-			ADMIN: 'halina'
-		}
-	})
-		.then(response => {
-			const users = response.data;
-			console.log(`GET list users`);
+	var valid = true;
+	if (word2Email.value == null || word2Email.value == "" || !word2Email.value.includes("@")) {
+		valid = false;
+		msg2.innerHTML = "Email cannot be empty and should be a valid email address.";
+	} else if (word2Year.value == null || word2Year.value == "") {
+		valid = false;
+		msg2.innerHTML = "Batch Year cannot be empty.";
+	}
 
-			users.forEach(function (user, index) {
-				console.log(user.email);
-				console.log(user.batchyr);
-				if (user.email == word2Email.value && user.batchyr == word2Year.value) {
-					console.log("match found");
-					window.open("batchdivaselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
-				}
-			});
-
-			msg2.setAttribute("class", "name");
-			msg2.innerHTML = "Sorry, not in list. Please sign up instead.";
+	if (!valid) {
+		msg2.setAttribute("class", "name");
+	} else {
+		axios.get(usersURL, {
+			headers: {
+				ADMIN: 'halina'
+			}
 		})
-		.catch(error => console.error(error));
+			.then(response => {
+				const users = response.data;
+				console.log(`GET list users`);
+
+				users.forEach(function (user, index) {
+					console.log(user.email);
+					console.log(user.batchyr);
+					if (user.email == word2Email.value && user.batchyr == word2Year.value) {
+						console.log("match found");
+						window.open("batchdivaselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
+					}
+				});
+
+				msg2.setAttribute("class", "name");
+				msg2.innerHTML = "Sorry, not in list. Please sign up instead.";
+			})
+			.catch(error => console.error(error));
+	}
 }
 
 $(document).ready(startPage);
