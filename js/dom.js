@@ -1,8 +1,8 @@
 
-//const usersURL = "https://divacontest.herokuapp.com/usersjson";
-const usersURL = "http://localhost:3000/usersjson";
-
-const divasURL = "http://localhost:3000/divasjson";
+const usersURL = "https://divacontest.herokuapp.com/usersjson";
+//const usersURL = "http://localhost:3000/usersjson";
+const divasURL = "https://divacontest.herokuapp.com/divasjson";
+//const divasURL = "http://localhost:3000/divasjson";
 
 const startPage = function () {
 
