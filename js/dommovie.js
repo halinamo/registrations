@@ -225,7 +225,7 @@ function signUp() {
 						.then(response => {
 							const user = response.data;
 							console.log(user);
-							window.open("batchdivaselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
+							window.open("batchmovieselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
 						})
 						.catch(error => console.error(error));
 				}
@@ -272,7 +272,7 @@ function signIn() {
 					console.log(user.batchyr);
 					if (user.email == word2Email.value && user.batchyr == word2Year.value) {
 						console.log("match found");
-						window.open("batchdivaselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
+						window.open("batchmovieselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
 					}
 				});
 
