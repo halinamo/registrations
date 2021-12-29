@@ -55,9 +55,9 @@ function listDivas() {
 		const diva = selectedDiva.value;
 		const divaId = selectedDivaId.value;
 
-		console.log(diva);
+		//console.log(diva);
 		if (diva == null || diva == undefined || diva == "") return;
-		console.log("saving!");
+		//console.log("saving!");
 
 		axios.put(usersURL + "/" + uid, {
 			"moviename": diva
@@ -113,8 +113,8 @@ function listDivas() {
 					selecttag.addEventListener('change', function (event) {
 						var selectedDiva = document.getElementById('selectDivaName');
 						var selectedDivaId = document.getElementById('selectDivaId');
-						console.log(event.target);
-						console.log(event.target["name"]);
+						//console.log(event.target);
+						//console.log(event.target["name"]);
 						selectedDiva.value = event.target["name"];
 						selectedDivaId.value = event.target["id"];
 					});
@@ -200,14 +200,14 @@ function signUp() {
 		})
 			.then(response => {
 				const users = response.data;
-				console.log(`GET list users`);
+				//console.log(`GET list users`);
 
 				let found = false
 				users.forEach(function (user, index) {
-					console.log(user.email);
-					console.log(user.batchyr);
+					//console.log(user.email);
+					//console.log(user.batchyr);
 					if (user.email.toLowerCase() == wordEmail.value.toLowerCase()) {
-						console.log("year match found");
+						//console.log("year match found");
 						found = true;
 						msg1.setAttribute("class", "name");
 						msg1.innerHTML = "Email exists. Please sign in instead.";
@@ -272,13 +272,13 @@ function signIn() {
 		})
 			.then(response => {
 				const users = response.data;
-				console.log(`GET list users`);
+				//console.log(`GET list users`);
 
 				users.forEach(function (user, index) {
-					console.log(user.email);
-					console.log(user.batchyr);
+					//console.log(user.email);
+					//console.log(user.batchyr);
 					if (user.email.toLowerCase() == word2Email.value.toLowerCase() && user.batchyr == word2Year.value) {
-						console.log("match found");
+						//console.log("match found");
 						window.open("batchmovieselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
 					}
 				});

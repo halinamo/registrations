@@ -47,14 +47,14 @@ function signUp() {
 		})
 			.then(response => {
 				const users = response.data;
-				console.log(`GET list users`);
+				//console.log(`GET list users`);
 
 				let found = false
 				users.forEach(function (user, index) {
-					console.log(user.email);
-					console.log(user.batchyr);
+					//console.log(user.email);
+					//console.log(user.batchyr);
 					if (user.email.toLowerCase() == wordEmail.value.toLowerCase()) {
-						console.log("year match found");
+						//console.log("year match found");
 						found = true;
 						msg1.setAttribute("class", "name");
 						msg1.innerHTML = "Email exists. You already signed up.";
@@ -78,7 +78,7 @@ function signUp() {
 					})
 						.then(response => {
 							const user = response.data;
-							console.log(user);
+							//console.log(user);
 
 							var buttonSubmit = document.getElementById("shirtSignUp");
 							buttonSubmit.setAttribute("disabled", "true");
