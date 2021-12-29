@@ -283,8 +283,10 @@ function signIn() {
 					}
 				});
 
-				msg2.setAttribute("class", "name");
-				msg2.innerHTML = "Sorry, not in list. Please sign up instead.";
+				if (users.length==0) {
+					msg2.setAttribute("class", "name");
+					msg2.innerHTML = "Sorry, not in list. Please sign up instead.";
+				}
 			})
 			.catch(error => console.error(error));
 	}
