@@ -59,7 +59,7 @@ function listDivas() {
 		console.log("saving!");
 
 		axios.put(usersURL + "/" + uid, {
-			"divaname": diva
+			"moviename": diva
 		}, {
 			headers: {
 				ADMIN: 'halina'
