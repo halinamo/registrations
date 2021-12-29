@@ -56,6 +56,7 @@ function listDivas() {
 		const divaId = selectedDivaId.value;
 
 		console.log(diva);
+		if (diva == null || diva == undefined || diva == "") return;
 		console.log("saving!");
 
 		axios.put(usersURL + "/" + uid, {
@@ -98,8 +99,8 @@ function listDivas() {
 			var cont = document.getElementById('divas');
 
 			divas.forEach(function (diva, index) {
-				console.log(diva.name);
-				console.log(diva.image);
+				//console.log(diva.name);
+				//console.log(diva.image);
 
 				var selecttag = document.createElement("input");
 				selecttag.setAttribute("type", "radio");
@@ -205,7 +206,7 @@ function signUp() {
 				users.forEach(function (user, index) {
 					console.log(user.email);
 					console.log(user.batchyr);
-					if (user.email == wordEmail.value) {
+					if (user.email.toLowerCase() == wordEmail.value.toLowerCase()) {
 						console.log("year match found");
 						found = true;
 						msg1.setAttribute("class", "name");
@@ -276,7 +277,7 @@ function signIn() {
 				users.forEach(function (user, index) {
 					console.log(user.email);
 					console.log(user.batchyr);
-					if (user.email == word2Email.value && user.batchyr == word2Year.value) {
+					if (user.email.toLowerCase() == word2Email.value.toLowerCase() && user.batchyr == word2Year.value) {
 						console.log("match found");
 						window.open("batchmusicselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self");
 					}
