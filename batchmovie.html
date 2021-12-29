@@ -37,7 +37,7 @@
      <fieldset>
         <p>Name: <input type="text" id="wordName" name="wordName" /></p>
         <p>Email: <input type="text" id="wordEmail" name="wordEmail" /></p><p><i>(all communications through this email)</i></p>
-        <p>Batch Year: <input type="text" id="wordYear" name="wordYear" /></p>
+        <p>Batch Year: <input type="text" id="wordYear" name="wordYear" pattern="[0-9.]+"/></p>
         <p>Section during Senior Year: <input type="text" id="wordSection" name="wordSection" /></p>
      </fieldset>
      <input type="submit" value="Sign Up" style="font-family: 'Avenir', cursive; font-size: 20px;"></input>
@@ -49,7 +49,7 @@
     <form id="diva2Form"> 
      <fieldset>
         <p>Email: <input type="text" id="word2Email" name="word2Email" /></p><p><i>(all communications through this email)</i></p>
-        <p>Batch Year: <input type="text" id="word2Year" name="word2Year" /></p>
+        <p>Batch Year: <input type="text" id="word2Year" name="word2Year" pattern="[0-9.]+"/></p>
      </fieldset>
      <input type="submit" value="Sign In" style="font-family: 'Avenir', cursive; font-size: 20px;"></input>
      <p id="msg2"></p>

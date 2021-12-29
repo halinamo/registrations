@@ -181,9 +181,9 @@ function signUp() {
 	} else if (wordEmail.value == null || wordEmail.value == "" || !wordEmail.value.includes("@")) {
 		valid = false;
 		msg1.innerHTML = "Email cannot be empty and should be a valid email address.";
-	} else if (wordYear.value == null || wordYear.value == "") {
+	} else if (wordYear.value == null || wordYear.value == "" || wordYear.value.length < 4 || wordYear.value.length > 4) {
 		valid = false;
-		msg1.innerHTML = "Batch Year cannot be empty.";
+		msg1.innerHTML = "Batch Year cannot be empty. Batch year must be in NNNN format (ie 1997).";
 	} else if (wordSection.value == null || wordSection.value == "") {
 		valid = false;
 		msg1.innerHTML = "Section cannot be empty.";
@@ -256,9 +256,9 @@ function signIn() {
 	if (word2Email.value == null || word2Email.value == "" || !word2Email.value.includes("@")) {
 		valid = false;
 		msg2.innerHTML = "Email cannot be empty and should be a valid email address.";
-	} else if (word2Year.value == null || word2Year.value == "") {
+	} else if (word2Year.value == null || word2Year.value == "" || word2Year.value.length < 4 || word2Year.value.length > 4) {
 		valid = false;
-		msg2.innerHTML = "Batch Year cannot be empty.";
+		msg2.innerHTML = "Batch Year cannot be empty. Batch year must be in NNNN format (ie 1997).";
 	}
 
 	if (!valid) {
