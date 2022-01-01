@@ -45,7 +45,7 @@ nav {
   font-weight: bold;
   vertical-align: text-bottom;
   font-size: 20px;
-  font-family: 'Avenir', cursive;
+  font-family: 'Avenir';
   padding: 5px;
 }
 
@@ -69,7 +69,7 @@ h2 {
   margin: 0;
   padding: 0;
 	font-size: 45px;
-	font-family: 'Cormorant Garamond', cursive;
+	font-family: 'Cormorant Garamond';
 	letter-spacing: 1px;
 }
 
@@ -77,7 +77,7 @@ h2 {
 	color: black;
 	text-align: center;
 	font-size: 30px;
-	font-family: 'Caveat Brush', cursive;
+	font-family: 'Caveat Brush';
 	letter-spacing: 1px;
 }*/
 h3 {
@@ -91,14 +91,14 @@ h3 a {
   font-size: 35px;
   text-decoration: none;
   vertical-align: text-bottom;
-  font-family: 'Avenir', cursive;
+  font-family: 'Avenir';
 }
 
 p {
 	color: black;
 	text-align: center;
 	font-size: 30px;
-	font-family: 'Caveat Brush', cursive;
+	font-family: 'Caveat Brush';
 	letter-spacing: 1px;
 }
 
@@ -120,7 +120,7 @@ main a {
   font-size: 35px;
   text-decoration: none;
   vertical-align: text-bottom;
-  font-family: 'Avenir', cursive;
+  font-family: 'Avenir';
 }
 
 img {
@@ -182,28 +182,28 @@ footer {
 .roundswon {
 	color: black;
 	font-size: 25px;
-  font-family: 'Irish Grover', cursive;
+  font-family: 'Irish Grover';
   background-color: #a5e09bde; /*#a5e09b78;*/
 }
 
 .gamestatus {
 	color: black;
 	font-size: 25px;
-  font-family: 'Irish Grover', cursive;
+  font-family: 'Irish Grover';
   background-color: #a5e09bde;
 }
 
 .gameovercaption {
 	color: black;
 	font-size: 30px;
-	font-family: 'Luckiest Guy', cursive;
+	font-family: 'Luckiest Guy';
 }
 
 .pClass {
 	color: black;
 	text-align: center;
 	font-size: 23px;
-  font-family: 'Irish Grover', cursive;
+  font-family: 'Irish Grover';
 	letter-spacing: 1px;
   background-color: #a5e09bde; /*#a5e09b78;*/
 }

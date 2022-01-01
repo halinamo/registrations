@@ -122,11 +122,11 @@ function listDivas() {
 				selecttag.setAttribute("id", diva.id);
 
 				var lblName = document.createElement("label");
-				lblName.setAttribute("style", "font-family: 'Avenir', cursive; font-size: 15px;");
+				lblName.setAttribute("style", "font-family: 'Avenir'; font-size: 15px;");
 				lblName.innerHTML = diva.name;
 
 				var lblTaken = document.createElement("label");
-				lblTaken.setAttribute("style", "font-family: 'Avenir', cursive; font-size: 15px;");
+				lblTaken.setAttribute("style", "font-family: 'Avenir'; font-size: 15px;");
 				lblTaken.setAttribute("id", diva.name + "2");
 				lblTaken.innerHTML = "";
 				if (diva.batchyrowner != "") {
