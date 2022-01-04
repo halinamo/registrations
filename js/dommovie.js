@@ -231,7 +231,7 @@ function signUp() {
 					})
 						.then(response => {
 							const user = response.data;
-							console.log(user);
+							//console.log(user);
 							window.open("batchmovieselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
 						})
 						.catch(error => console.error(error));
@@ -273,19 +273,20 @@ function signIn() {
 			.then(response => {
 				const users = response.data;
 				//console.log(`GET list users`);
-
+				let found = false;
 				users.forEach(function (user, index) {
 					//console.log(user.email);
 					//console.log(user.batchyr);
 					if (user.email.toLowerCase() == word2Email.value.toLowerCase() && user.batchyr == word2Year.value) {
 						//console.log("match found");
-						window.open("batchmovieselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self")
+						found = true;
+						window.open("batchmovieselect.html?uid=" + user.id + "&year=" + user.batchyr, "_self");
 					}
 				});
 
-				if (users.length==0) {
+				if (users.length==0 || !found) {
 					msg2.setAttribute("class", "name");
-					msg2.innerHTML = "Sorry, not in list. Please sign up instead.";
+					msg2.innerHTML = "Sorry, not in list. Please check if correct email + batch year. Or, please sign up instead.";
 				}
 			})
 			.catch(error => console.error(error));
