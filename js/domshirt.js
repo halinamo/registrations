@@ -82,7 +82,7 @@ function signUp() {
 
 							var buttonSubmit = document.getElementById("shirtSignUp");
 							buttonSubmit.setAttribute("disabled", "true");
-							buttonSubmit.setAttribute("value", "[SIGNED UP!]");
+							buttonSubmit.setAttribute("value", "[REGISTERED] Thank you!");
 						})
 						.catch(error => console.error(error));
 				}
