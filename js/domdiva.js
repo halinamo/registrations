@@ -20,12 +20,12 @@ const startPage = function () {
 	} else {
 		// sign in page
 
-		var form_el = document.getElementById("divaForm");
+		/*var form_el = document.getElementById("divaForm");
 
 		form_el.addEventListener("submit", function (evt) {
 			evt.preventDefault();
 			signUp();
-		});
+		});*/
 
 		var form2_el = document.getElementById("diva2Form");
 
@@ -46,7 +46,7 @@ function listDivas() {
 	console.log("uid=" + uid);
 	console.log("year=" + year);
 
-	var buttonSubmit = document.getElementById("saveSelect");
+	/*var buttonSubmit = document.getElementById("saveSelect");
 
 	buttonSubmit.addEventListener("click", function (evt) {
 		evt.preventDefault();
@@ -87,7 +87,7 @@ function listDivas() {
 				//
 			})
 			.catch(error => console.error(error));
-	});
+	});*/
 
 	axios.get(divasURL, {
 		headers: {
@@ -107,10 +107,13 @@ function listDivas() {
 				selecttag.setAttribute("type", "radio");
 				selecttag.setAttribute("name", diva.name);
 				selecttag.setAttribute("value", "N");
+
+				selecttag.setAttribute("disabled", "true"); // reg end
+
 				if (diva.batchyrowner != "") {
 					selecttag.setAttribute("value", "Y");
 					selecttag.setAttribute("disabled", "true");
-				} else {
+				} else {					
 					selecttag.addEventListener('change', function (event) {
 						var selectedDiva = document.getElementById('selectDivaName');
 						var selectedDivaId = document.getElementById('selectDivaId');
@@ -246,13 +249,13 @@ function signUp() {
 function signIn() {
 	var msg2 = document.getElementById('msg2');
 	msg2.innerHTML = "";
-	var msg1 = document.getElementById('msg');
-	msg1.innerHTML = "";
+	//var msg1 = document.getElementById('msg');
+	//msg1.innerHTML = "";
 
 	var word2Email = document.getElementById("word2Email");
 	var word2Year = document.getElementById("word2Year");
-	// console.log("signIn with " + word2Email.value);
-	// console.log("signIn with " + word2Year.value);
+	console.log("signIn with " + word2Email.value);
+	console.log("signIn with " + word2Year.value);
 
 	var valid = true;
 	if (word2Email.value == null || word2Email.value == "" || !word2Email.value.includes("@")) {
@@ -276,8 +279,8 @@ function signIn() {
 				//console.log(`GET list users`);
 				let found = false;
 				users.forEach(function (user, index) {
-					//console.log(user.email);
-					//console.log(user.batchyr);
+					//console.log("[" +user.email+ "]");
+					//console.log("[" +user.batchyr+ "]");
 					if (user.email.toLowerCase() == word2Email.value.toLowerCase() && user.batchyr == word2Year.value) {
 						//console.log("match found");
 						found = true;

@@ -5,12 +5,12 @@ const startPage = function () {
 
 		// sign in page
 
-		var form_el = document.getElementById("divaForm");
+		/*var form_el = document.getElementById("divaForm");
 
 		form_el.addEventListener("submit", function (evt) {
 			evt.preventDefault();
 			signUp();
-		});
+		});*/
 };
 
 function signUp() {
